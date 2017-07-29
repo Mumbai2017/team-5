@@ -36,7 +36,7 @@ $videoCount=4;
 		<?php
 		for($i=0; $i<$videoCount; $i++)
 		{
-		?>
+			?>
 
 			<div class="row pt-10">
 				<div>
@@ -61,23 +61,7 @@ $videoCount=4;
 
 
 
-		<!-- <div class="row">
-			<div class="col-xs-12">
-				Video Name 2
-			</div>
-
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12">
-				
-				<a href="webUITwo.php">
-					<video autoplay loop class="img img-responsive" style="width:100%;">
-						<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
-					</video>
-				</a>
-			</div>
-		</div> -->
+		
 
 	</div>
 
