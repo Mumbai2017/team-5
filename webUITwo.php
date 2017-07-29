@@ -38,9 +38,9 @@
 
 	</div>
 
-	<div class="row outer-margin justify-content-end ">
+	<div class="row outer-margin">
 		<div class="col-xs-12">
-			<button class="btn btn-sm btn-primary" id="commentButton">Comment</button>
+				<h2><?php echo 'Video Name';?><h2>
 		</div>
 	</div>
 
@@ -54,7 +54,7 @@
 			<div class="col-xs-12" id="comments">
 				<!-- facebook comments -->
 				<!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div> -->
-				
+
 				<!-- begin wwww.htmlcommentbox.com -->
 				<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
 				<link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
