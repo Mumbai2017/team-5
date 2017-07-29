@@ -15,7 +15,7 @@ import java.net.URL;
 
 class Upload {
 
-    static final String UPLOAD_URL= "http://simplifiedcoding.16mb.com/VideoUpload/upload.php";
+    static final String UPLOAD_URL= "http://10.0.2.2:8080/video.php";
 
     private int serverResponseCode;
 
@@ -74,6 +74,7 @@ class Upload {
             dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
             serverResponseCode = conn.getResponseCode();
+            Log.e("Upload", "Server Code: " + serverResponseCode);
 
             fileInputStream.close();
             dos.flush();
@@ -98,6 +99,7 @@ class Upload {
             }
             return sb.toString();
         }else {
+            Log.e("Upload", "not uploaded");
             return "Could not upload";
         }
     }

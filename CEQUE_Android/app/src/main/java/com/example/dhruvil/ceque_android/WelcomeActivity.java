@@ -83,7 +83,7 @@ public class WelcomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_add_video) {
             Toast.makeText(this, "Add Video Opening", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent();
+            Intent intent = new Intent(WelcomeActivity.this, AddVideoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_lesson_plans) {
             Toast.makeText(this, "Lesson Plans Opening", Toast.LENGTH_SHORT).show();

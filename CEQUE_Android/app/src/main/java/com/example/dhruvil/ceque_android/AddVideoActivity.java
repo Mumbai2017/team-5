@@ -43,7 +43,7 @@ public class AddVideoActivity extends AppCompatActivity {
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                chooseVideo();
+                uploadVideo();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
