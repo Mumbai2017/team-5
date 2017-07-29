@@ -68,6 +68,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dhruvil.ceque_android.WelcomeActivity" />
         </activity>
+        <activity
+            android:name=".PlanDetailActivity"
+            android:label="@string/title_activity_plan_detail"
+            android:parentActivityName=".LessonPlansActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dhruvil.ceque_android.LessonPlansActivity" />
+        </activity>
     </application>
 
 </manifest>

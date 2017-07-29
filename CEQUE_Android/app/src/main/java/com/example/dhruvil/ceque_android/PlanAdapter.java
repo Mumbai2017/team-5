@@ -2,6 +2,7 @@ package com.example.dhruvil.ceque_android;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -42,7 +43,18 @@ class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder> {
     @Override
     public void onBindViewHolder(PlanViewHolder holder, int position) {
         Plan current = planList.get(position);
+        final int finalPosition = position;
+        final String date = current.getPlanDate();
         holder.planDate.setText(current.getPlanDate());
+        holder.baseLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PlanDetailActivity.class);
+                intent.putExtra("plan_image_url", urls[finalPosition]);
+                intent.putExtra("plan_date", date);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -59,7 +71,7 @@ class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.PlanViewHolder> {
             super(view);
 //            Setup views
             planDate = (TextView) view.findViewById(R.id.text_view_date);
-            baseLayout = (CardView) view.findViewById(R.id.cardview_game_base);
+            baseLayout = (CardView) view.findViewById(R.id.card_view_plan_base);
         }
     }
 

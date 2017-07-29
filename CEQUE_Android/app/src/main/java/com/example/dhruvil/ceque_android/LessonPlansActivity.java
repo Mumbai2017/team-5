@@ -41,7 +41,7 @@ public class LessonPlansActivity extends AppCompatActivity {
 
     private String[] planURLs = {
             "www.google.com",
-            "www.google.com"
+            "www.yahoo.com"
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
