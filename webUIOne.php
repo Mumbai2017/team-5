@@ -48,7 +48,7 @@ if(isset($_POST['username']))   // getting the json data from php
 	<div class="container-fluid">
 		<div class="row outer-margin">
 			<div>
-				<a href="webUITwo.php">Video Name 1</a>
+				<a href="webUITwo.php"><h2>Video Name 1</h2></a>
 			</div>
 		</div>
 		<div class="row outer-margin">
