@@ -11,9 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.github.hiteshsondhi88.libffmpeg.ExecuteBinaryResponseHandler;
+import com.github.hiteshsondhi88.libffmpeg.FFmpeg;
+import com.github.hiteshsondhi88.libffmpeg.LoadBinaryResponseHandler;
+import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegCommandAlreadyRunningException;
+import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegNotSupportedException;
 
 public class AddVideoActivity extends AppCompatActivity {
 
@@ -21,6 +29,8 @@ public class AddVideoActivity extends AppCompatActivity {
     public static Uri fileUri;
     private String selectedPath;
     private TextView textView, textViewResponse;
+    private FFmpeg ffmpeg;
+    private String[] command;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +58,8 @@ public class AddVideoActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        loadFFMpegBinary();
     }
 
     private void chooseVideo() {
@@ -65,6 +77,16 @@ public class AddVideoActivity extends AppCompatActivity {
                 Uri selectedImageUri = data.getData();
                 fileUri = selectedImageUri;
                 selectedPath = getPath(selectedImageUri);
+
+                String[] command = {"-y", "-i", selectedPath, "-s", "160x120", "-r", "25",
+                        "-vcodec", "mpeg4", "-b:v", "150k", "-b:a", "48000", "-ac", "2", "-ar",
+                        "22050", selectedPath};
+                try {
+                    execFFmpegBinary(command);
+                } catch (Exception e) {
+                    Log.e(TAG, e.toString());
+                }
+
                 textView.setText(selectedPath);
             }
         }
@@ -115,5 +137,63 @@ public class AddVideoActivity extends AppCompatActivity {
         }
         UploadVideo uv = new UploadVideo();
         uv.execute();
+    }
+
+    private void loadFFMpegBinary() {
+        try {
+            if (ffmpeg == null) {
+                Log.e("FFMPEG", "is null");
+                ffmpeg = FFmpeg.getInstance(this);
+            }
+            ffmpeg.loadBinary(new LoadBinaryResponseHandler() {
+                @Override
+                public void onFailure() {
+                    Toast.makeText(AddVideoActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onSuccess() {
+                    Log.d(TAG, "ffmpeg : correct Loaded");
+                }
+            });
+        } catch (FFmpegNotSupportedException e) {
+            Toast.makeText(AddVideoActivity.this, "Not Supported", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d(TAG, "Exception not supported : " + e.toString());
+        }
+    }
+
+    private void execFFmpegBinary(final String[] command) throws Exception {
+        try {
+            ffmpeg.execute(command, new ExecuteBinaryResponseHandler() {
+
+                @Override
+                public void onFailure(String s) {
+                    Log.d(TAG, "FAILED with output : " + s);
+                }
+
+                @Override
+                public void onSuccess(String s) {
+                    Log.d(TAG, "SUCCESS with output : " + s);
+                }
+
+                @Override
+                public void onProgress(String s) {
+                    Log.d(TAG, "progress : " + s);
+                }
+
+                @Override
+                public void onStart() {
+                    Log.d(TAG, "Started command : ffmpeg " + command);
+                }
+
+                @Override
+                public void onFinish() {
+                    Log.d(TAG, "Finished command : ffmpeg " + command);
+
+                }
+            });
+        } catch (FFmpegCommandAlreadyRunningException e) {
+        }
     }
 }
