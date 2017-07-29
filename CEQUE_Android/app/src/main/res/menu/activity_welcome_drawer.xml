@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_video"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/add_video" />
+        <item
+            android:id="@+id/nav_lesson_plans"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/lesson_plans" />
+        <item
+            android:id="@+id/nav_video_history"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/video_history" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_contact_us"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/contact_us" />
+        </menu>
+    </item>
+
+</menu>
