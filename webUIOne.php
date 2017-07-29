@@ -61,7 +61,7 @@ if(isset($_POST['username']))   // getting the json data from php
 			<div class="row">
 				<div>
 					<a href="webUITwo.php">
-						<video autoplay loop  style="width:100%;">
+						<video  loop  style="width:100%;">
 							<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
 						</video>
 					</a>
