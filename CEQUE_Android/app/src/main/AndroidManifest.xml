@@ -59,6 +59,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dhruvil.ceque_android.WelcomeActivity" />
         </activity>
+        <activity
+            android:name=".VideoHistoryActivity"
+            android:label="@string/title_activity_video_history"
+            android:parentActivityName=".WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dhruvil.ceque_android.WelcomeActivity" />
+        </activity>
     </application>
 
 </manifest>

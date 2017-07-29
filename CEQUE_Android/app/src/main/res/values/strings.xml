@@ -16,4 +16,5 @@
     <string name="title_activity_add_video">AddVideo</string>
     <string name="title_activity_upload">UploadActivity</string>
     <string name="title_activity_lesson_plans">LessonPlansActivity</string>
+    <string name="title_activity_video_history">VideoHistoryActivity</string>
 </resources>

@@ -53,7 +53,7 @@ public class LessonPlansActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_plans);
         List<Plan> planList = getPlanData();
-        adapter = new PlanAdapter(this, planList, this, );
+        adapter = new PlanAdapter(this, planList, this, planURLs);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
