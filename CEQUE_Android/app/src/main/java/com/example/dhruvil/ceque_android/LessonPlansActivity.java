@@ -2,11 +2,13 @@ package com.example.dhruvil.ceque_android;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -28,6 +30,7 @@ public class LessonPlansActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PlanAdapter adapter;
     private RequestQueue requestQueue;
+    private FloatingActionButton fab ;
 
     private String[] planIDs = {
             "1",
@@ -51,6 +54,13 @@ public class LessonPlansActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showImageSelector();
+            }
+        });
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_plans);
         List<Plan> planList = getPlanData();
         adapter = new PlanAdapter(this, planList, this, planURLs);
@@ -117,6 +127,10 @@ public class LessonPlansActivity extends AppCompatActivity {
             planData.add(current);
         }
         return planData;
+    }
+
+    public void showImageSelector() {
+        
     }
 
 }

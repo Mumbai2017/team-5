@@ -2,7 +2,9 @@ package com.example.dhruvil.ceque_android;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isFormValid()) {
                     dialog.setMessage("Logging in...");
                     dialog.show();
+                    setSharedPreferences();
 //                    makeLoginRequest();
                 } else {
                     Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_SHORT).show();
@@ -133,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 //                Start the MainActivity
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
-//                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                setSharedPreferences();
                 dialog.dismiss();
                 finish();
             }
@@ -185,5 +188,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setSharedPreferences() {
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("credentials", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(Constants.KEY_USERNAME, usernameEditText.getText().toString().trim());
     }
 }
