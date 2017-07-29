@@ -31,26 +31,21 @@
     </div>
 </nav>
 
-<div class="row outer-margin">
-    <div class="col-xs-12" id="comments">
-        <!-- facebook comments -->
-        <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div> -->
 
-        <!-- begin wwww.htmlcommentbox.com -->
-        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
-        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1501351997452");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-        <!-- end www.htmlcommentbox.com -->
-    </div>
-</div>
 
 <body>
 
 <form action="lectureplan.php" method="post" enctype="multipart/form-data">
-    <div class="container-fluid inline">
-        Select image to upload:
+    <div class="container-fluid">
+        <div class="col-md-4">
+        <b>Select image to upload:</b>
+        </div>
+        <div class="col-md-4">
         <input type="file" name="fileToUpload" id="fileToUpload">
+        </div>
+        <div class="col-md-4">
         <input type="submit" value="Upload Image" name="submit">
+        </div>
     </div>
 
 </form>
@@ -101,6 +96,20 @@ if(isset($_POST["submit"])) {
 ?>
 
 </body>
+
+<div class="row outer-margin">
+    <div class="col-xs-12" id="comments">
+        <!-- facebook comments -->
+        <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div> -->
+
+        <!-- begin wwww.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1501351997452");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</div>
+
 
 <footer class="site-footer">
     <div class="container-fluid">
