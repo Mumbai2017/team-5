@@ -8,12 +8,12 @@ $password= "";
 if(isset($_POST['submit']))
 {
 
-if(isset($_POST['loginid'])){
-	$loginid = $_POST['EmailId'];
-}
-if(isset($_POST['password'])){
+
+	$loginid = $_POST['login'];
+
+
     $password = $_POST['password'];
-}
+
 
 	
 $userObject = new User();
