@@ -1,4 +1,9 @@
+<?php 
+session_start();
+include_once('/include/db.php');
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +41,7 @@
         <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/-u-j7uqU7sI"></iframe>  <!-- Fetch the video link from the database -->
     </div>
 </div>
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<h3>Comments</h3>
 	</div>
@@ -62,6 +67,26 @@
         
     </div>
 </div>
+<!--Once the video is fetched this can be executed
+<?php
+        $result = $mysqli->query("SELECT * FROM video WHERE id=".$_SESSION['user_id']." ORDER BY vid DESC");
+        if($result->num_rows>0)
+            while($row = $result->fetch_assoc())
+        {
+            echo "<h1>".$row['video_name']." uploaded by user ".$mysqli->query("SELECT email FROM users WHERE id = ".$row['id'].";")->fetch_assoc()['email'].'</h1><br><br>
+<form method="post">
+<textarea class="form-control" rows="2" cols="30" placeholder="Comment here" name="comment_text"></textarea>
+<input type="hidden" name="video_id_to_work" value="'.$row['video_id'].'">
+<input type="submit" class="btn btn-primary" name="comment_submit" value="Comment">
+<input type="submit" class="btn btn-default" name="delete" value="Delete Video">
+</form>';
+            $comments_table = $mysqli->query("SELECT * FROM comments WHERE video_id=".$row['video_id']." ORDER BY comment_id DESC");
+            if($comments_table->num_rows>0)
+                while($comment_row = $comments_table->fetch_assoc())
+                    echo "<h3>".$mysqli->query("SELECT email FROM users WHERE id = ".$comment_row['commentor_id'].";")->fetch_assoc()['email']." says : ".$comment_row['comment']."</h3>";
+        }
+        ?>
+-->
 <footer class="site-footer">
     <div class="container-fluid">
         <div class="row">
