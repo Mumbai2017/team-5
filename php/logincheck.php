@@ -26,7 +26,7 @@ if(!empty($loginid) && !empty($password)){
 
     if($json_array['success']==1)
     {
-        header("Location:../html/mentordashboard.php");        //TechRaY have to make changes here
+        header("Location:../mentordashboard.php");        //Anshul made the changes
     }
     else
     {
