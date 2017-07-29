@@ -15,7 +15,20 @@
     </video>
 </div> -->
 <?php  
-$videoCount=4;
+
+  $teacherid="";
+
+if(isset($_POST['username']))   // getting the json data from php 
+{
+	$obj = json_decode($_POST['username']);
+	//echo $obj->{'username'};
+    $teacherid=$obj->{'username'};
+}
+
+//$videoCount=4;
+
+
+
 ?>
 <!DOCTYPE HTML>
 <html>

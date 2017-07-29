@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
   $password = $_POST['password'];
   $contact=$_POST['phone'];
   $role=$_POST['role'];
-  $mid=$_POST['mid'];
+ # $mid=$_POST['mid'];
   $userObject = new User();
   $hashed_password = md5($password);
   $json_registration = $userObject->createNewRegisterUser($loginid,$hashed_password,$name,$email,$contact,$mid,$role);
