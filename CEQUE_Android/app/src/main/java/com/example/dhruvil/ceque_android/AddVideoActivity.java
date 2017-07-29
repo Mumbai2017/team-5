@@ -79,7 +79,7 @@ public class AddVideoActivity extends AppCompatActivity {
                 Log.e(TAG, "onActivityResult: " + selectedPath);
                 String[] command = {"-y", "-i", selectedPath, "-s", "160x120", "-r", "25",
                         "-vcodec", "mpeg4", "-b:v", "150k", "-b:a", "48000", "-ac", "2", "-ar",
-                        "22050", "storage/emulated/0/"};
+                        "22050", "storage/emulated/0/VID_1.mp4"};
                 Log.e(TAG, "onActivityResult: SELECTED PATH" + selectedPath);
                 try {
                     execFFmpegBinary(command);

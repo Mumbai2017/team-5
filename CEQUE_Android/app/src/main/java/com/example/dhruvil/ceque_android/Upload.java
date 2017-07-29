@@ -12,14 +12,17 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Created by Belal on 11/22/2015.
+ */
 
-class Upload {
+public class Upload {
 
-    static final String UPLOAD_URL= "http://10.0.2.2:8080/videoupload.php";
+    public static final String UPLOAD_URL= "http://54.169.228.25/videoupload.php";
 
     private int serverResponseCode;
 
-    String uploadVideo(String file) {
+    public String uploadVideo(String file) {
 
         String fileName = file;
         HttpURLConnection conn = null;
@@ -74,7 +77,6 @@ class Upload {
             dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
 
             serverResponseCode = conn.getResponseCode();
-            Log.e("Upload", "Server Code: " + serverResponseCode);
 
             fileInputStream.close();
             dos.flush();
@@ -99,7 +101,6 @@ class Upload {
             }
             return sb.toString();
         }else {
-            Log.e("Upload", "not uploaded");
             return "Could not upload";
         }
     }
