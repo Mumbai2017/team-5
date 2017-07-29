@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (Boolean.valueOf(Constants.getLoginStatus(this))) {
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            startActivity(intent);
+        }
+
         usernameEditText = (EditText) findViewById(R.id.edit_text_username);
         passwordEditText = (EditText) findViewById(R.id.edit_text_password);
         usernameTextInputLayout = (TextInputLayout) findViewById(R.id.text_ip_layout_username);
@@ -194,5 +199,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("credentials", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(Constants.KEY_USERNAME, usernameEditText.getText().toString().trim());
+        editor.putString(Constants.KEY_STATUS, "true");
+        editor.putString(Constants.KEY_UPLOAD_NUMBER, "0");
+        editor.apply();
     }
 }

@@ -1,5 +1,7 @@
 package com.example.dhruvil.ceque_android;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -18,11 +20,11 @@ import java.net.URL;
 
 public class Upload {
 
-    public static final String UPLOAD_URL= "http://54.169.228.25/videoupload.php";
+    public static final String UPLOAD_URL= "http://10.0.2.2/video_upload.php";
 
     private int serverResponseCode;
 
-    public String uploadVideo(String file) {
+    public String uploadVideo(String file, Context context) {
 
         String fileName = file;
         HttpURLConnection conn = null;
@@ -97,6 +99,12 @@ public class Upload {
                     sb.append(line);
                 }
                 rd.close();
+                SharedPreferences preferences = context.getSharedPreferences("credentials", Context.MODE_PRIVATE);
+                int n = Integer.valueOf(preferences.getString(Constants.KEY_UPLOAD_NUMBER, "1"));
+                n++;
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putInt(Constants.KEY_UPLOAD_NUMBER, n);
+                editor.apply();
             } catch (IOException ioex) {
             }
             return sb.toString();
