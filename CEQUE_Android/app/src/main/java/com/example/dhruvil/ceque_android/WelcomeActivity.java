@@ -1,5 +1,6 @@
 package com.example.dhruvil.ceque_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -82,6 +83,8 @@ public class WelcomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_add_video) {
             Toast.makeText(this, "Add Video Opening", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            startActivity(intent);
         } else if (id == R.id.nav_lesson_plans) {
             Toast.makeText(this, "Lesson Plans Opening", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_video_history) {

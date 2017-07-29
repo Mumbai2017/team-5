@@ -13,4 +13,6 @@
     <string name="lesson_plans">Lesson Plans</string>
     <string name="video_history">Video History</string>
     <string name="contact_us">Contact Us</string>
+    <string name="title_activity_add_video">AddVideo</string>
+    <string name="title_activity_upload">UploadActivity</string>
 </resources>
