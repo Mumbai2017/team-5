@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 
        if($json_registration['success']==1)
        {
-           header("Location:../html/mentordashboard.php");         //have to back the changes
+           header("Location:../mentordashboard.php");         //have to back the changes
        }
        else
        {
