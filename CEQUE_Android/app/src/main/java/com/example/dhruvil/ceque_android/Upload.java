@@ -15,7 +15,7 @@ import java.net.URL;
 
 class Upload {
 
-    static final String UPLOAD_URL= "http://10.0.2.2:8080/video.php";
+    static final String UPLOAD_URL= "http://10.0.2.2:8080/videoupload.php";
 
     private int serverResponseCode;
 

@@ -23,7 +23,7 @@ public class VideoHistoryActivity extends AppCompatActivity {
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webView.loadUrl("http://10.0.2.2:8080/webUIOne.php");
+        webView.loadUrl("http://54.169.228.25/webUIOne.php");
     }
 
     private class MyBrowser extends WebViewClient {
