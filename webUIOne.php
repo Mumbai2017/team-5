@@ -40,7 +40,7 @@ $videoCount=4;
 
 			<div class="row">
 				<div>
-					Video Name 1
+					<a href="webUITwo.php">Video Name 1</a>
 				</div>
 			</div>
 			<div class="row">
