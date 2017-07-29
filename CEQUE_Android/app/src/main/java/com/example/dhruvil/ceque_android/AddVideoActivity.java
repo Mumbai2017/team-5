@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.hiteshsondhi88.libffmpeg.ExecuteBinaryResponseHandler;
 import com.github.hiteshsondhi88.libffmpeg.FFmpeg;
@@ -77,14 +76,17 @@ public class AddVideoActivity extends AppCompatActivity {
                 Uri selectedImageUri = data.getData();
                 fileUri = selectedImageUri;
                 selectedPath = getPath(selectedImageUri);
-
+                Log.e(TAG, "onActivityResult: " + selectedPath);
                 String[] command = {"-y", "-i", selectedPath, "-s", "160x120", "-r", "25",
                         "-vcodec", "mpeg4", "-b:v", "150k", "-b:a", "48000", "-ac", "2", "-ar",
-                        "22050", selectedPath};
+                        "22050", "storage/emulated/0/VID_SEND.mp4"};
+                Log.e(TAG, "onActivityResult: SELECTED PATH" + selectedPath);
                 try {
                     execFFmpegBinary(command);
+//                    String filePath = SiliCompressor.with(this).compressVideo(selectedImageUri.toString(), Uri.fromFile(new File("/storage/emulated/0/Sample")).toString());
+//                    Log.e(TAG, "onActivityResult: " + filePath);
                 } catch (Exception e) {
-                    Log.e(TAG, e.toString());
+                    Log.e(TAG, "Hello world! " + e.toString());
                 }
 
                 textView.setText(selectedPath);
@@ -142,13 +144,13 @@ public class AddVideoActivity extends AppCompatActivity {
     private void loadFFMpegBinary() {
         try {
             if (ffmpeg == null) {
-                Log.e("FFMPEG", "is null");
+                Log.d(TAG, "ffmpeg : null");
                 ffmpeg = FFmpeg.getInstance(this);
             }
             ffmpeg.loadBinary(new LoadBinaryResponseHandler() {
                 @Override
                 public void onFailure() {
-                    Toast.makeText(AddVideoActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "onFailure: ");
                 }
 
                 @Override
@@ -157,43 +159,51 @@ public class AddVideoActivity extends AppCompatActivity {
                 }
             });
         } catch (FFmpegNotSupportedException e) {
-            Toast.makeText(AddVideoActivity.this, "Not Supported", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "loadFFMpegBinary: Not supported");
         } catch (Exception e) {
-            Log.d(TAG, "Exception not supported : " + e.toString());
+            Log.d(TAG, "Exception not supported : " + e);
         }
     }
 
-    private void execFFmpegBinary(final String[] command) throws Exception {
+    private void execFFmpegBinary(final String[] command) {
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Loading...");
         try {
             ffmpeg.execute(command, new ExecuteBinaryResponseHandler() {
-
                 @Override
                 public void onFailure(String s) {
-                    Log.d(TAG, "FAILED with output : " + s);
+                    if (dialog.isShowing())
+                        dialog.hide();
+                    Log.d(TAG, "FAILED with output : "+s);
                 }
 
                 @Override
                 public void onSuccess(String s) {
-                    Log.d(TAG, "SUCCESS with output : " + s);
+                    if (dialog.isShowing())
+                        dialog.hide();
+                    Log.d(TAG, "SUCCESS with output : "+s);
                 }
 
                 @Override
                 public void onProgress(String s) {
-                    Log.d(TAG, "progress : " + s);
+                    if (!dialog.isShowing())
+                        dialog.show();
+                    Log.d(TAG, "progress : "+s);
                 }
 
                 @Override
                 public void onStart() {
-                    Log.d(TAG, "Started command : ffmpeg " + command);
+                    Log.d(TAG, "Started command :ffmpeg "+command);
                 }
 
                 @Override
                 public void onFinish() {
-                    Log.d(TAG, "Finished command : ffmpeg " + command);
+                    Log.d(TAG, "Finished command :ffmpeg "+command);
 
                 }
             });
         } catch (FFmpegCommandAlreadyRunningException e) {
+
         }
     }
 }
