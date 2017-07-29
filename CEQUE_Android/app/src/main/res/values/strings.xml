@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">CEQUE_Android</string>
     <string name="action_settings">Settings</string>
+    <string name="username_prompt">Username</string>
+    <string name="password_prompt">Password</string>
+    <string name="main_activity_toolbar_title">CEQUE</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_welcome2">WelcomeActivity2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="add_video">Add a Video</string>
+    <string name="lesson_plans">Lesson Plans</string>
+    <string name="video_history">Video History</string>
+    <string name="contact_us">Contact Us</string>
 </resources>
