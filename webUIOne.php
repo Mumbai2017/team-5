@@ -15,7 +15,7 @@
     </video>
 </div> -->
 <?php  
-$count=4;
+$videoCount=4;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -32,24 +32,36 @@ $count=4;
 
 <body>
 	<div class="container-fluid">
-		<div class="row pt-10">
-			<div class="col-xs-12">
-				Video Name 1
+
+		<?php
+		for($i=0; $i<$videoCount; $i++)
+		{
+		?>
+
+			<div class="row pt-10">
+				<div>
+					Video Name 1
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<a href="webUITwo.php">
-					<video autoplay loop  style="width:100%;">
-						<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
-					</video>
-				</a>
+			<div class="row">
+				<div>
+					<a href="webUITwo.php">
+						<video autoplay loop  style="width:100%;">
+							<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
+						</video>
+					</a>
+				</div>
 			</div>
-		</div>
+
+		<?php
+
+		}
+		?>
+		
 
 
 
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-xs-12">
 				Video Name 2
 			</div>
@@ -65,10 +77,9 @@ $count=4;
 					</video>
 				</a>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 
 </body>
 </html>
-
