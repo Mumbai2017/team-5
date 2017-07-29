@@ -44,7 +44,7 @@ public class WelcomeActivity extends AppCompatActivity
         TextView textview = (TextView) findViewById(R.id.text_view_welcome);
         textview.setText("Welcome " + Constants.getUsername(this));
         TextView textview2 = (TextView) findViewById(R.id.nav_header_username);
-        textview2.setText(Constants.getUsername(this)); 
+        textview2.setText(Constants.getUsername(this));
         TextView textViewDuration = (TextView) findViewById(R.id.text_view_course_duration);
         textViewDuration.setText("Number of months left in course: " + monthsLeft);
     }
