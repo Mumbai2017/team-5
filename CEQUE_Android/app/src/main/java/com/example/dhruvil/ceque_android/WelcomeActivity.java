@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -29,6 +30,8 @@ public class WelcomeActivity extends AppCompatActivity
         toolbar.setTitle(getResources().getString(R.string.main_activity_toolbar_title));
         setSupportActionBar(toolbar);
 
+        Log.e("Welcome", "onCreate: " + Constants.getUsername(this));
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -38,6 +41,10 @@ public class WelcomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        TextView textview = (TextView) findViewById(R.id.text_view_welcome);
+        textview.setText("Welcome " + Constants.getUsername(this));
+        TextView textview2 = (TextView) findViewById(R.id.nav_header_username);
+        textview2.setText(Constants.getUsername(this)); 
         TextView textViewDuration = (TextView) findViewById(R.id.text_view_course_duration);
         textViewDuration.setText("Number of months left in course: " + monthsLeft);
     }

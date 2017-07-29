@@ -1,7 +1,9 @@
 package com.example.dhruvil.ceque_android;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -30,6 +32,7 @@ public class AddVideoActivity extends AppCompatActivity {
     private TextView textView, textViewResponse;
     private FFmpeg ffmpeg;
     private String[] command;
+    private String uploadNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,14 +80,19 @@ public class AddVideoActivity extends AppCompatActivity {
                 fileUri = selectedImageUri;
                 selectedPath = getPath(selectedImageUri);
                 Log.e(TAG, "onActivityResult: " + selectedPath);
+
+                String username = Constants.getUsername(this);
+                Log.e(TAG, "onActivityResult: NAME " + username);
+                SharedPreferences preferences = getSharedPreferences("credentials", Context.MODE_PRIVATE);
+//                uploadNumber = preferences.getString(Constants.KEY_UPLOAD_NUMBER, "1");
+                uploadNumber = "1";
                 String[] command = {"-y", "-i", selectedPath, "-s", "160x120", "-r", "25",
                         "-vcodec", "mpeg4", "-b:v", "150k", "-b:a", "48000", "-ac", "2", "-ar",
-                        "22050", "storage/emulated/0/VID_1.mp4"};
+                        "22050", "storage/emulated/0/" + username + uploadNumber + ".mp4"};
                 Log.e(TAG, "onActivityResult: SELECTED PATH" + selectedPath);
+
                 try {
                     execFFmpegBinary(command);
-//                    String filePath = SiliCompressor.with(this).compressVideo(selectedImageUri.toString(), Uri.fromFile(new File("/storage/emulated/0/Sample")).toString());
-//                    Log.e(TAG, "onActivityResult: " + filePath);
                 } catch (Exception e) {
                     Log.e(TAG, "Hello world! " + e.toString());
                 }
@@ -133,7 +141,7 @@ public class AddVideoActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... params) {
                 Upload u = new Upload();
-                String msg = u.uploadVideo(selectedPath);
+                String msg = u.uploadVideo(selectedPath, AddVideoActivity.this);
                 return msg;
             }
         }
