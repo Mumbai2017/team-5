@@ -78,6 +78,10 @@ class Google_Service_Monitoring_Resource_ProjectsGroups extends Google_Service_R
    * "projects/{project_id_or_number}".
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken If this field is not empty then it must contain
+   * the nextPageToken value returned by a previous call to this method. Using
+   * this field causes the method to return additional results from the previous
+   * method call.
    * @opt_param int pageSize A positive number that is the maximum number of
    * results to return.
    * @opt_param string ancestorsOfGroup A group name:
@@ -93,10 +97,6 @@ class Google_Service_Monitoring_Resource_ProjectsGroups extends Google_Service_R
    * "projects/{project_id_or_number}/groups/{group_id}". Returns the descendants
    * of the specified group. This is a superset of the results returned by the
    * childrenOfGroup filter, and includes children-of-children, and so forth.
-   * @opt_param string pageToken If this field is not empty then it must contain
-   * the nextPageToken value returned by a previous call to this method. Using
-   * this field causes the method to return additional results from the previous
-   * method call.
    * @return Google_Service_Monitoring_ListGroupsResponse
    */
   public function listProjectsGroups($name, $optParams = array())

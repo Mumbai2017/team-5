@@ -116,7 +116,8 @@ class Google_Service_PeopleService_Resource_ContactGroups extends Google_Service
    * (contactGroups.update)
    *
    * @param string $resourceName The resource name for the contact group, assigned
-   * by the server. An ASCII string, in the form of `contactGroups/`.
+   * by the server. An ASCII string, in the form of
+   * `contactGroups/`contact_group_id.
    * @param Google_Service_PeopleService_UpdateContactGroupRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_PeopleService_ContactGroup

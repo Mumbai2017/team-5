@@ -52,15 +52,6 @@ class Google_Service_CloudTrace_Resource_ProjectsTraces extends Google_Service_R
    * The format is `projects/PROJECT_ID`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string orderBy Optional. A single field used to sort the returned
-   * traces. Only the following field names can be used:
-   *
-   * *   `trace_id`: the trace's ID field *   `name`:  the root span's resource
-   * name *   `duration`: the difference between the root span's start time and
-   * end time *   `start`:  the start time of the root span
-   *
-   * Sorting is in ascending order unless `desc` is appended to the sort field
-   * name. Example: `"name desc"`).
    * @opt_param string filter Opional. Return only traces that match this [trace
    * filter](/trace/docs/trace-filters). Example:
    *
@@ -78,6 +69,15 @@ class Google_Service_CloudTrace_Resource_ProjectsTraces extends Google_Service_R
    * `next_page_token` in the response indicates that more results might be
    * available, even if fewer than the maximum number of results is returned by
    * this request.
+   * @opt_param string orderBy Optional. A single field used to sort the returned
+   * traces. Only the following field names can be used:
+   *
+   * *   `trace_id`: the trace's ID field *   `name`:  the root span's resource
+   * name *   `duration`: the difference between the root span's start time and
+   * end time *   `start`:  the start time of the root span
+   *
+   * Sorting is in ascending order unless `desc` is appended to the sort field
+   * name. Example: `"name desc"`).
    * @return Google_Service_CloudTrace_ListTracesResponse
    */
   public function listProjectsTraces($parent, $optParams = array())

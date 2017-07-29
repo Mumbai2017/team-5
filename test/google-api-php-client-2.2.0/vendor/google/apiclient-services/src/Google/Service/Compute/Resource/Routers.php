@@ -204,7 +204,8 @@ class Google_Service_Compute_Resource_Routers extends Google_Service_Resource
   }
   /**
    * Patches the specified Router resource with the data included in the request.
-   * This method supports patch semantics. (routers.patch)
+   * This method supports PATCH semantics and uses JSON merge patch format and
+   * processing rules. (routers.patch)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.

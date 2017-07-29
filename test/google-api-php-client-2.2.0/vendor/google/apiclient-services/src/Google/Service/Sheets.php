@@ -92,14 +92,14 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'includeGridData' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
                 'ranges' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'includeGridData' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ),
               ),
             ),
@@ -151,6 +151,14 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'valueInputOption' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'responseDateTimeRenderOption' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'includeValuesInResponse' => array(
                   'location' => 'query',
                   'type' => 'boolean',
@@ -160,14 +168,6 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                 ),
                 'insertDataOption' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'valueInputOption' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'responseDateTimeRenderOption' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -191,11 +191,15 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'dateTimeRenderOption' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'valueRenderOption' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'dateTimeRenderOption' => array(
+                'majorDimension' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -203,10 +207,6 @@ class Google_Service_Sheets extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'majorDimension' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'batchUpdate' => array(
@@ -248,7 +248,7 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'valueRenderOption' => array(
+                'majorDimension' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -256,7 +256,7 @@ class Google_Service_Sheets extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'majorDimension' => array(
+                'valueRenderOption' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -275,14 +275,6 @@ class Google_Service_Sheets extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'responseDateTimeRenderOption' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'includeValuesInResponse' => array(
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ),
                 'responseValueRenderOption' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -290,6 +282,14 @@ class Google_Service_Sheets extends Google_Service
                 'valueInputOption' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'responseDateTimeRenderOption' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'includeValuesInResponse' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
               ),
             ),
