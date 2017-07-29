@@ -18,6 +18,7 @@ import android.widget.TextView;
 public class AddVideoActivity extends AppCompatActivity {
 
     public static final String TAG = "AddVideoActivity";
+    public static Uri fileUri;
     private String selectedPath;
     private TextView textView, textViewResponse;
 
@@ -62,6 +63,7 @@ public class AddVideoActivity extends AppCompatActivity {
             if (requestCode == 3) {
                 System.out.println("SELECT_VIDEO");
                 Uri selectedImageUri = data.getData();
+                fileUri = selectedImageUri;
                 selectedPath = getPath(selectedImageUri);
                 textView.setText(selectedPath);
             }

@@ -32,7 +32,7 @@ public class PlanDetailActivity extends AppCompatActivity {
         date = intent.getStringExtra("plan_date");
         textViewDate.setText(date);
 
-        Log.e("onCreate: ", "PlanDetailActivity" + url);
+        Log.e("onCreate: ", "PlanDetailActivity " + url);
 
 //        ImageRequest iconRequest = new ImageRequest(url,
 //                new Response.Listener<Bitmap>() {
