@@ -1,11 +1,5 @@
 <?php
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$db="";
-$connection = mysqli_connect($dbhost,$dbuser,$dbpass,$db)
-
-
+ 
  if($_SERVER['REQUEST_METHOD']=='POST'){
  $file_name = $_FILES['myFile']['name'];
  $file_size = $_FILES['myFile']['size'];
