@@ -18,4 +18,6 @@
     <string name="title_activity_lesson_plans">LessonPlansActivity</string>
     <string name="title_activity_video_history">VideoHistoryActivity</string>
     <string name="title_activity_plan_detail">PlanDetailActivity</string>
+    <string name="intro_upload_video">"Touch the 'Upload' button to submit the video"</string>
+    <string name="intro_select_video">"Touch the 'Choose File' button to select a video"</string>
 </resources>

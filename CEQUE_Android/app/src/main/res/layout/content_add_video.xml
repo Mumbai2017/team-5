@@ -10,16 +10,39 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <Button
-        android:id="@+id/buttonChoose"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose File" />
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:text="@string/intro_select_video"/>
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:text="@string/intro_upload_video"
+        android:layout_marginBottom="340dp"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonChoose"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Choose File" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonUpload"
