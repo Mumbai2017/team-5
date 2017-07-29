@@ -25,13 +25,13 @@ if(isset($_POST['username']))   // getting the json data from php
 	$teacherid=$obj->{'username'};
 }
 
-//$videoCount=4;   //this was just for static changes
+$videocount=4;   //this was just for static changes
 
-$con=mysqli_connect('54.169.228.25','root','root','team-5');
-$sql="Select vid from video where uid=".$teacherid;
+// $con=mysqli_connect('54.169.228.25','root','root','team-5');
+// $sql="Select vid from video where uid=".$teacherid;
 
-$result=mysqli_query($con,$sql);
-$videocount=mysqli_num_rows(result);
+// $result=mysqli_query($con,$sql);
+// $videocount=mysqli_num_rows(result);
 
 
 
@@ -54,7 +54,10 @@ $videocount=mysqli_num_rows(result);
 	<div class="container-fluid">
 
 	<?php
-		?>
+		for($i=0; $i<$videocount ;$i++)
+		{
+			?>
+	
 		<div class="row outer-margin">
 			<div>
 				<a href="webUITwo.php"><h2>Video Name 1</h2></a>
@@ -70,14 +73,18 @@ $videocount=mysqli_num_rows(result);
 			</div>
 		</div>
 
+		<?php
+	}
+	?>
 
-		
+
+		<div class="row outer-margin">
 		<!-- begin wwww.htmlcommentbox.com -->
 				<div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
 				<link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
 				<script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1501351997452");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
 				<!-- end www.htmlcommentbox.com -->
-
+		</div>
 	</div>
 </body>
 </html>
