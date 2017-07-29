@@ -38,7 +38,7 @@ $videoCount=4;
 		{
 			?>
 
-			<div class="row pt-10">
+			<div class="row">
 				<div>
 					Video Name 1
 				</div>
