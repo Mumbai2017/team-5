@@ -25,7 +25,6 @@ public class WelcomeActivity extends AppCompatActivity
 
 //        monthsLeft = getIntent().getIntExtra("months_left", 0);
         monthsLeft = 8;
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.main_activity_toolbar_title));
         setSupportActionBar(toolbar);
@@ -86,6 +85,8 @@ public class WelcomeActivity extends AppCompatActivity
             Intent intent = new Intent(WelcomeActivity.this, AddVideoActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_lesson_plans) {
+            Intent intent = new Intent(WelcomeActivity.this, LessonPlansActivity.class);
+            startActivity(intent);
             Toast.makeText(this, "Lesson Plans Opening", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_video_history) {
             Toast.makeText(this, "Video History Opening", Toast.LENGTH_SHORT).show();
