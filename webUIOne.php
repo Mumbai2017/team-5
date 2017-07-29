@@ -46,16 +46,16 @@ if(isset($_POST['username']))   // getting the json data from php
 
 <body>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row outer-margin">
 			<div>
 				<a href="webUITwo.php">Video Name 1</a>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row outer-margin">
 			<div>
 				<a href="webUITwo.php">
 				<video  loop  style="width:100%;" controls>
-						<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
+						<source src=sample.mp4 type=video/mp4 />
 					</video>
 				</a>
 			</div>
