@@ -16,17 +16,16 @@
 </div> -->
 <?php  
 
-  $teacherid="";
+$teacherid="";
 
 if(isset($_POST['username']))   // getting the json data from php 
 {
 	$obj = json_decode($_POST['username']);
 	//echo $obj->{'username'};
-    $teacherid=$obj->{'username'};
+	$teacherid=$obj->{'username'};
 }
 
 //$videoCount=4;
-
 
 
 
@@ -47,38 +46,20 @@ if(isset($_POST['username']))   // getting the json data from php
 
 <body>
 	<div class="container-fluid">
-
-		<?php
-		for($i=0; $i<$videoCount; $i++)
-		{
-			?>
-
-			<div class="row">
-				<div>
-					<a href="webUITwo.php">Video Name 1</a>
-				</div>
+		<div class="row">
+			<div>
+				<a href="webUITwo.php">Video Name 1</a>
 			</div>
-			<div class="row">
-				<div>
-					<a href="webUITwo.php">
-						<video  loop  style="width:100%;">
-							<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
-						</video>
-					</a>
-				</div>
+		</div>
+		<div class="row">
+			<div>
+				<a href="webUITwo.php">
+				<video  loop  style="width:100%;" controls>
+						<source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4 />
+					</video>
+				</a>
 			</div>
-
-		<?php
-
-		}
-		?>
-		
-
-
-
-		
-
+		</div>	
 	</div>
-
 </body>
 </html>
