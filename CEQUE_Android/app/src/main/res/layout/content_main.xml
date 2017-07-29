@@ -25,7 +25,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
-            android:src="@drawable/image"
+            android:src="@drawable/ceque_logo"
             android:transitionName="xyabotLogo" />
 
         <android.support.design.widget.TextInputLayout
