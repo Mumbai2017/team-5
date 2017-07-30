@@ -29,6 +29,8 @@ if(isset($_POST['username']))   // getting the json data from php
 
 
 
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
