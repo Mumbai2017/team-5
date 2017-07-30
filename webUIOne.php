@@ -55,7 +55,7 @@ if(isset($_POST['username']))   // getting the json data from php
 
 			<div class="row">
 				<div>
-					Video Name 1
+					<a href="webUITwo.php">Video Name 1</a>
 				</div>
 			</div>
 			<div class="row">
