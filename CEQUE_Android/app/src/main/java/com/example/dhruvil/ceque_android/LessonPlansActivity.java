@@ -54,8 +54,8 @@ public class LessonPlansActivity extends AppCompatActivity {
     };
 
     private String[] planDates = {
-            "Hello",
-            "Ni Hao"
+            "Math Plan - 10/02/2016",
+            "Math Plan - 7/02/2016"
     };
 
     private String[] planURLs = {
@@ -123,6 +123,7 @@ public class LessonPlansActivity extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
 //                    If the server returns an error, this code is executed
                     Log.e("Error", "Response: " + error.getMessage());
+
                 }
             });
 //            Add the JsonArrayRequest to the RequestQueue object for parsing
@@ -158,6 +159,7 @@ public class LessonPlansActivity extends AppCompatActivity {
 
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
+            Log.e("onActivityResult: ", "" + filePath);
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 uploadImage();
@@ -175,7 +177,7 @@ public class LessonPlansActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String s) {
                         loading.dismiss();
-                        Toast.makeText(LessonPlansActivity.this, s , Toast.LENGTH_LONG).show();
+                        Toast.makeText(LessonPlansActivity.this, "success" , Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -209,6 +211,7 @@ public class LessonPlansActivity extends AppCompatActivity {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] imageBytes = baos.toByteArray();
+        Log.e("getStringImage: HE", Base64.encodeToString(imageBytes, Base64.DEFAULT));
         return Base64.encodeToString(imageBytes, Base64.DEFAULT);
     }
 

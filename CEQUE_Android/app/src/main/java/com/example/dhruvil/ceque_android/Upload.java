@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class Upload {
 
-    public static final String UPLOAD_URL= "http://10.0.2.2/video_upload.php";
+    public static final String UPLOAD_URL= "http://10.0.2.2/imageupload.php";
     public static final String TAG = "UploadClass";
     private Context context;
     private String fileName;
@@ -129,7 +129,7 @@ public class Upload {
     }
 
     public void makeVideoDetailsRequest() {
-        String url = "";
+        String url = "http://10.0.2.2/video_detail.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -155,7 +155,7 @@ public class Upload {
                 Map<String, String> params = new HashMap<>();
 //                Put parameters in the Post Request
                 params.put("username", Constants.getUsername(context));
-                params.put("password", fileName);
+                params.put("file_name", fileName);
                 return params;
             }
         };

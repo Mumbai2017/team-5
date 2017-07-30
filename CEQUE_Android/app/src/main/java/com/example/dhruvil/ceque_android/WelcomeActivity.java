@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class WelcomeActivity extends AppCompatActivity
@@ -41,12 +40,8 @@ public class WelcomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        TextView textview = (TextView) findViewById(R.id.text_view_welcome);
-        textview.setText("Welcome " + Constants.getUsername(this));
-        TextView textview2 = (TextView) findViewById(R.id.nav_header_username);
-        textview2.setText(Constants.getUsername(this));
-        TextView textViewDuration = (TextView) findViewById(R.id.text_view_course_duration);
-        textViewDuration.setText("Number of months left in course: " + monthsLeft);
+//        TextView textview2 = (TextView) findViewById(R.id.nav_header_username);
+//        textview2.setText(Constants.getUsername(this));
     }
 
     @Override

@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int PASSWORD_MIN_LENGTH = 2;
+    public static int PASSWORD_MIN_LENGTH = 0;
     private EditText usernameEditText;
     private EditText passwordEditText;
     private TextInputLayout usernameTextInputLayout;
@@ -69,12 +69,12 @@ public class MainActivity extends AppCompatActivity {
                     dialog.setMessage("Logging in...");
                     dialog.show();
                     setSharedPreferences();
-//                    makeLoginRequest();
+                    makeLoginRequest();
                 } else {
                     Toast.makeText(MainActivity.this, "Invalid Entry", Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+//                startActivity(intent);
             }
         });
 
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void makeLoginRequest() {
-        String url = "";
+        String url = "http://10.0.2.2/teacherlogin.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
