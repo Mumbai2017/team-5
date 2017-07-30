@@ -25,16 +25,18 @@ if(isset($_POST['username']))   // getting the json data from php
 	$teacherid=$obj->{'username'};
 }
 
-$videocount=4;   //this was just for static changes
+//$videocount=4;   //this was just for static changes
 
-// $con=mysqli_connect('54.169.228.25','root','root','team-5');
-// $sql="Select vid from video where uid=".$teacherid;
+ //$con=mysqli_connect('54.169.228.25','root','root','team-5');
+ 
+ $con=mysqli_connect('localhost','root','root','team-5');
+ $sql="Select vid from video where uid=".$teacherid;
 
-// $result=mysqli_query($con,$sql);
-// $videocount=mysqli_num_rows(result);
+ $result=mysqli_query($con,$sql);
+ $videocount=mysqli_num_rows(result);
 
-
-
+ //$sql="Select vid from video where uid=".$teacherid;
+ 
 ?>
 
 <!DOCTYPE HTML>
