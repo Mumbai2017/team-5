@@ -18,19 +18,20 @@ if(isset($_POST['submit']))
 	
 $userObject = new User();
 
-if(!empty($username) && !empty($password)){
+if(!empty($loginid) && !empty($password)){
 
+    $role='mentor';
   	$hashed_password = md5($password);
-    $json_array = $userObject->loginUsers($username, $hashed_password);
+    $json_array = $userObject->loginUsers($loginid, $hashed_password,$role);
 
     if($json_array['success']==1)
     {
-        header("Location:../blankpage.php");        //TechRaY have to make changes here
+        header("Location:../html/mentordashboard.php");        //TechRaY have to make changes here
     }
     else
     {
         echo "<script>alert('Invalid Username Or Password');
-        window.location = '../login.html';
+        window.location = '../html/mentorlogin.html';
         </script>";
 
     }

@@ -52,10 +52,10 @@ class User{
 		return $json;
 	}
 	
-	public function loginUsers($username, $password){
+	public function loginUsers($username, $password,$role){
 			
 		$json = array();
-		$canUserLogin = $this->isLoginExist($username, $password);
+		$canUserLogin = $this->isLoginExist($username, $password,$role);
 		if($canUserLogin){
 			$json['success'] = 1;
 		}else{
