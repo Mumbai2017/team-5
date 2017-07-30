@@ -50,10 +50,10 @@
 	<div class="row outer-margin">
 		<div class="col-xs-12">
 			<h2><?php echo 'Video Name';?><h2>
+			</div>
 		</div>
-	</div>
 
-	<div class="row outer-margin">
+		<div class="row outer-margin">
 		<!-- 	<div class="col-xs-4">
 				<button class="btn btn-md btn-primary" id="commentButton">Comment</button>
 			</div>
@@ -68,15 +68,22 @@
 		<div class="col-xs-4 " id="area">
 		</div>
 		
-		<form method="POST" action="#" >
+		<!-- <form method="POST"> -->
+		<div>
 			<textarea cols="50" id="commentsArea" name="comm" rows="3"></textarea><br>
 			<button class="btn btn-md btn-primary" name="submit" id="postButton">Post</button> 
-			<button class="btn btn-md btn-primary" name="submit" id="viewButton">View all Comments</button> 
-		</form>
-	</div>
+			<!-- <button class="btn btn-md btn-primary" name="view" id="viewButton">View all Comments</button>  -->
 
-	<div class="row outer-margin" id="comments">
+		</div>
+
+		
 	</div>
+	<p>
+		<div class="outer-margin" id="comments" name="comments">
+
+		</div>
+	</p>
+	<!-- </form> -->
 </div>
 
 
@@ -89,18 +96,32 @@
 
 
 <?php
-require_once 'db.php';
-if(isset($_POST['submit']))
-{
-	session_start();
-	$_SESSION['vid']=101;
 
+require_once 'db.php';
+
+
+if(isset($_POST['view']))
+{
 	$db = new Db();
 	$conn = $db->connect();
-	$stmt = $conn->prepare("INSERT INTO vcomments(comment,vid) VALUES(?,?)");
-	$stmt->bind_param("si",$_POST['comm'],$_SESSION['vid']);
-	$res = $stmt->execute();
+	$stmt = $conn->prepare("SELECT cid,comment FROM vcomments WHERE vid=?");
+	$stmt->bind_param("i",$_SESSION['vid']);
+	$stmt->execute();
+
+	$result = $stmt->get_result();
+
+	$row = [];
+
+	while($row = $result->fetch_assoc())
+	{
+	echo "Comment no. : {$row['cid']}    {$row['comment']} ";
+	}
 }
 
-?>
 
+
+
+
+
+
+?>
