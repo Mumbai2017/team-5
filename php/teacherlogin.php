@@ -35,7 +35,7 @@ if(!empty($loginid) && !empty($password)){
     else
     {
 		   
-			header("HTTP/1.1 404 OK");
+			header("HTTP/1.1 404 false");
 			header("Status: 404 All rosy");
     }
 
