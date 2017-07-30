@@ -34,10 +34,12 @@
 
 <div class="container">
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/-u-j7uqU7sI"></iframe>  <!-- Fetch the video link from the database -->
+        <iframe class="embed-responsive-item" src="video.mp4"></iframe>  <!-- Fetch the video link from the database -->
     </div>
 </div>
-
+<div class="container">
+	<h1><center><b>Sentences<b><center></h1>
+	</div>
 <div class="container-fluid">
 	<div class="row">
 		<h3>Comments</h3>
