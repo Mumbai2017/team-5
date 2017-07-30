@@ -26,13 +26,39 @@
         <div class="collapse navbar-collapse" id="bs-WDM-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
                 <li><a href="mentordashboard.php">Videos</a></li>
-                <li><a href="#">Logout</a></li>         <!-- Add the logout link -->
+                <li><a href="html/mentorlogin.html">Logout</a></li>         <!-- Add the logout link -->
             </ul>
         </div>
     </div>
 </nav>
 
-
+<div class="container table-responsive">
+<table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+        <th><center>Lecture Plan</center></th>
+        <th><center>Id</center></th>
+        <th><center>Topic</center></th>
+        <th><center>Duration</center></th>
+        <th><center>Content<center></th>
+    </tr>
+    <tr>
+        <td>English</td>
+        <td>1</td>
+        <td>Grammar</td>
+        <td>6 months</td>
+        <td>Figures of Speech,Vowels,Subject,Verb.</td>
+    </tr>
+    <tr>
+        <td>Mathematics</td>
+        <td>2</td>
+        <td>Number System</td>
+        <td>8 months</td>
+        <td>Sets,Fractions,Ratio Proportion.</td>
+    </tr>
+    </tbody>
+</table>
+</div>
 
 <body>
 <!-- Mentors can submit the responce for the lecture plan -->
