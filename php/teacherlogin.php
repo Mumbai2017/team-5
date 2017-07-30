@@ -29,13 +29,14 @@ if(!empty($loginid) && !empty($password)){
 
     if($json_array['success']==1)
     {
-		   $json['success']=1;
-           return $json;
+			header("HTTP/1.1 200 OK");
+			header("Status: 200 All rosy");
     }
     else
     {
-		   $json['success']=0;
-           return $json;
+		   
+			header("HTTP/1.1 404 OK");
+			header("Status: 404 All rosy");
     }
 
 }
