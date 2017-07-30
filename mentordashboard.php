@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="comment.css">
     <link rel="stylesheet" href="webUIOne.css">
+	
 </head>
 <body style="background-color: linen">
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin: 0px;">
@@ -40,32 +41,40 @@
 <div class="container">
 	<h1><center><b>Sentences<b><center></h1>
 	</div>
+
 <div class="container-fluid">
-	<div class="row">
-		<h3>Comments</h3>
+		<div class="row outer-margin">
+		<!-- 	<div class="col-xs-4">
+				<button class="btn btn-md btn-primary" id="commentButton">Comment</button>
+			</div>
+		-->
+		<div class="col align-self-center" >
+			<!-- <button class="btn btn-md btn-primary" id="postButton">Comment</button> -->
+			<h3>Comments</h3>
+		</div>
 	</div>
-    
-    <div class="row">
-    
-    <div class="col-md-6">
-    						<div class="widget-area no-padding blank">
-								<div class="status-upload">
-									<form>
-										<textarea placeholder="Any suggestions" ></textarea>
-										<ul>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
-											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
-										</ul>
-										<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
-									</form>
-								</div><!-- Status Upload  -->
-							</div><!-- Widget Area -->
-						</div>
-        
-    </div>
-</div>
+
+	<div class="row outer-margin">
+		<div class="col-xs-4 " id="area">
+		</div>
+		
+		<!-- <form method="POST"> -->
+		<div>
+			<textarea cols="50" id="commentsArea" name="comm" rows="3"></textarea><br>
+			<button class="btn btn-md btn-primary" name="submit" id="postButton">Post</button> 
+			<!-- <button class="btn btn-md btn-primary" name="view" id="viewButton">View all Comments</button>  -->
+
+		</div>
+
+		
+	</div>
+	</div>
+	<p>
+		<div class="outer-margin" id="comments" name="comments">
+
+		</div>
+	</p>
+	
 <!--Once the video is fetched this can be executed
 <?php
         $result = $mysqli->query("SELECT * FROM video WHERE id=".$_SESSION['user_id']." ORDER BY vid DESC");
@@ -106,7 +115,9 @@
         </div>
 </footer>
 
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="webUITwo.js"></script>
+<script type=text/javascript src="webUITwo.js" ></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
