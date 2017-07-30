@@ -1,7 +1,3 @@
-<?php 
-session_start();
-include_once('/include/db.php');
-?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -30,7 +26,7 @@ include_once('/include/db.php');
         <div class="collapse navbar-collapse" id="bs-WDM-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
                 <li><a href="lectureplan.php">Lecture Plans</a></li>
-                <li><a href="#">Logout</a></li>         <!-- Add the logout link -->
+                <li><a href="html/mentorlogin.html">Logout</a></li>         <!-- Add the logout link -->
             </ul>
         </div>
     </div>
@@ -41,6 +37,7 @@ include_once('/include/db.php');
         <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/-u-j7uqU7sI"></iframe>  <!-- Fetch the video link from the database -->
     </div>
 </div>
+
 <div class="container-fluid">
 	<div class="row">
 		<h3>Comments</h3>
