@@ -40,11 +40,9 @@
 
 	<div class="row">
 		<div class="col-xs-4">
-			<a href="webUITwo.php">
-				<video style="width:100%" controls>
-					<source src=sample.mp4 type=video/mp4 />
-				</video>
-			</a>
+			<video style="width:100%" controls>
+				<source src="sample.mp4" type=video/mp4 />
+			</video>
 		</div>
 
 	</div>
@@ -52,10 +50,10 @@
 	<div class="row outer-margin">
 		<div class="col-xs-12">
 			<h2><?php echo 'Video Name';?><h2>
-			</div>
 		</div>
+	</div>
 
-		<div class="row outer-margin">
+	<div class="row outer-margin">
 		<!-- 	<div class="col-xs-4">
 				<button class="btn btn-md btn-primary" id="commentButton">Comment</button>
 			</div>
@@ -68,21 +66,41 @@
 
 	<div class="row outer-margin">
 		<div class="col-xs-4 " id="area">
-
-			<form method="POST" >
-				<textarea cols="50" id="commentsArea" rows="3"></textarea><br>
-				<button class="btn btn-md btn-primary" id="postButton">Post</button> 
-				<div class="outer-margin" id="comments">
-
-
-				</div>
-			</form>
 		</div>
+		
+		<form method="POST" action="#" >
+			<textarea cols="50" id="commentsArea" name="comm" rows="3"></textarea><br>
+			<button class="btn btn-md btn-primary" name="submit" id="postButton">Post</button> 
+			<button class="btn btn-md btn-primary" name="submit" id="viewButton">View all Comments</button> 
+		</form>
+	</div>
+
+	<div class="row outer-margin" id="comments">
 	</div>
 </div>
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <script type=text/javascript src="webUITwo.js" ></script>
 </body>
+
 </html>
+
+
+<?php
+require_once 'db.php';
+if(isset($_POST['submit']))
+{
+	session_start();
+	$_SESSION['vid']=101;
+
+	$db = new Db();
+	$conn = $db->connect();
+	$stmt = $conn->prepare("INSERT INTO vcomments(comment,vid) VALUES(?,?)");
+	$stmt->bind_param("si",$_POST['comm'],$_SESSION['vid']);
+	$res = $stmt->execute();
+}
+
+?>
+
