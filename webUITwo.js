@@ -10,7 +10,7 @@ var idNumber = 1;
 $("#postButton").on("click", function(){
 	var start = "Comment "+idNumber+"  : ";
 	var userComm = $("#commentsArea").val();
-	var element = '<div class="row" id="'+idNumber+'">'+start+'<br>'+userComm+'br'+'</div><br>'; 
+	var element = '<div class="row" id="'+idNumber+'">'+start+'<br>'+userComm+'<br>'+'</div><br>'; 
 	idNumber++;
 	$("#comments").append(element);
 	$("#commentsArea").val("");
