@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2017 at 05:44 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Jul 30, 2017 at 03:16 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -33,6 +35,14 @@ CREATE TABLE `mentor` (
   `email` varchar(100) NOT NULL,
   `phone` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mentor`
+--
+
+INSERT INTO `mentor` (`loginid`, `password`, `name`, `email`, `phone`) VALUES
+(1, 'c4ca4238a0b923820dcc509a6f75849b', 'Rajeev', 'rajeev.kumar@gmail.com', 2147483647),
+(3, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', 'Pratik Nichat', 'p.n@gmail.com', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -71,6 +81,14 @@ CREATE TABLE `users` (
   `phone` int(10) NOT NULL,
   `mid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`loginid`, `password`, `name`, `email`, `phone`, `mid`) VALUES
+(2, 'c81e728d9d4c2f636f067f89cc14862c', 'Pawan Tiwari', 'pawan.tiwari@gmail.com', 1234567890, 1),
+(4, 'a87ff679a2f3e71d9181a67b7542122c', 'Chirag Makhija', 'chirag.m@gmail.com', 1234567890, 3);
 
 -- --------------------------------------------------------
 
@@ -177,6 +195,7 @@ ALTER TABLE `vcomments`
 --
 ALTER TABLE `video`
   ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`loginid`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
