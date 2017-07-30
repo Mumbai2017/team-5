@@ -32,6 +32,30 @@
         </div>
     </div>
 </nav>
+<div class="container table-responsive">
+<table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+        <th><center>Date of upload</center></th>
+        <th><center>Teacher Name</center></th>
+		<th><center>Video</center></th>
+        <th><center>Comments<center></th>
+    </tr>
+    <tr>
+        <td>25th July,2017</td>
+        <td>Sharmila Sengupta</td>
+		<td><a href="#">Video 1</td>
+        <td>Elaborate on the procedure of teaching.</td>
+    </tr>
+	<tr>
+        <td>31th July,2017</td>
+        <td>Mamta Banerjee</td>
+		<td><a href="#">Video 2</td>
+        <td>Good work.</td>
+    </tr>
+    </tbody>
+</table>
+</div>
 
 <div class="container">
     <div class="embed-responsive embed-responsive-16by9">
