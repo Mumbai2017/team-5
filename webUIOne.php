@@ -33,7 +33,7 @@ if(isset($_POST['username']))   // getting the json data from php
  $sql="Select vid from video where uid=".$teacherid;
 
  $result=mysqli_query($con,$sql);
- $videocount=mysqli_num_rows(result);
+ // $videocount=mysqli_num_rows(result);
 
  //$sql="Select vid from video where uid=".$teacherid; 
   
@@ -56,10 +56,6 @@ if(isset($_POST['username']))   // getting the json data from php
 <body>
 	<div class="container-fluid">
 
-	<?php
-		for($i=0; $i<$videocount ;$i++)
-		{
-			?>
 	
 		<div class="row outer-margin">
 			<div>
@@ -76,9 +72,21 @@ if(isset($_POST['username']))   // getting the json data from php
 			</div>
 		</div>
 
-		<?php
-	}
-	?>
+			<div class="row outer-margin">
+			<div>
+				<a href="webUITwo.php"><h2>Mickey Mouse</h2></a>
+			</div>
+		</div>
+		<div class="row outer-margin">
+			<div>
+				<a href="webUITwo.php">
+					<video  loop  style="width:100%;" controls>
+						<source src="sample.mp4" type=video/mp4 />
+					</video>
+				</a>
+			</div>
+		</div>
+
 
 	</div>
 </body>

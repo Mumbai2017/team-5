@@ -41,7 +41,7 @@
 	<div class="row">
 		<div class="col-xs-4">
 			<video style="width:100%" controls>
-				<source src="sample.mp4" type=video/mp4 />
+				<source src="video.mp4" type=video/mp4 />
 			</video>
 		</div>
 
@@ -97,7 +97,7 @@
 
 <?php
 
-require_once 'db.php';
+//require_once 'db.php';
 
 
 if(isset($_POST['view']))
