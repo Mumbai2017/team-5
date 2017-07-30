@@ -47,7 +47,12 @@
                     <h4 class="panel-title">Registration Form</h4>
                 </div>
                 <div class="panel-body">
-                    <form method="post" id="registerform" action="" role="form">
+                    <form method="post" id="registerform" action="../php/signup.php" role="form">
+                        <div class="form-group">
+                            <label for="loginid">LoginId</label>
+                            <input type="text" class="form-control" name="loginid" placeholder="choose any login id">
+                        </div>
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Enter Name">
@@ -58,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="id">Mentor ID</label>
-                            <input type="text" class="form-control" name="loginid" placeholder="Enter Mentor ID">
+                            <input type="text" class="form-control" name="mid" placeholder="Enter Mentor ID">
                         </div>
                         <div class="form-group">
                             <label for="pass">Password</label>

@@ -14,11 +14,11 @@ $hashed_password="";
 if(isset($_POST['submit']))
 {
  	$name = $_POST['name'];
-  $loginid = $_POST['logind'];
+  $loginid = $_POST['loginid'];
   $password = $_POST['password'];
   $contact=$_POST['phone'];
   $role=$_POST['role'];
- # $mid=$_POST['mid'];
+  $mid=$_POST['mid'];
   $userObject = new User();
   $hashed_password = md5($password);
   $json_registration = $userObject->createNewRegisterUser($loginid,$hashed_password,$name,$email,$contact,$mid,$role);
@@ -26,11 +26,11 @@ if(isset($_POST['submit']))
 
        if($json_registration['success']==1)
        {
-           header("Location:../blankpage.php");         //have to back the changes
+           header("Location:../html/mentordashboard.php");         //have to back the changes
        }
        else
        {
-           header("Location:../register.html");
+           header("Location:../html/mentorlogin.html");
        }
 
 
