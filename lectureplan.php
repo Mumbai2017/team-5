@@ -36,25 +36,19 @@
 <table class="table table-bordered table-striped">
     <tbody>
     <tr>
-        <th><center>Lecture Plan</center></th>
-        <th><center>Id</center></th>
-        <th><center>Topic</center></th>
-        <th><center>Duration</center></th>
-        <th><center>Content<center></th>
+        <th><center>Date of upload</center></th>
+        <th><center>Image</center></th>
+        <th><center>Comments<center></th>
     </tr>
     <tr>
-        <td>English</td>
-        <td>1</td>
-        <td>Grammar</td>
-        <td>6 months</td>
-        <td>Figures of Speech,Vowels,Subject,Verb.</td>
+        <td>15th July,2017</td>
+        <td><img src="plan1.jpg" height="150px"></td>
+        <td>Elaborate on the procedure of teaching.</td>
     </tr>
-    <tr>
-        <td>Mathematics</td>
-        <td>2</td>
-        <td>Number System</td>
-        <td>8 months</td>
-        <td>Sets,Fractions,Ratio Proportion.</td>
+	<tr>
+        <td>18th July,2017</td>
+        <td><img src="plan2.jpg" height="150px"></td>
+        <td>Send a short demonstration of the same.</td>
     </tr>
     </tbody>
 </table>
