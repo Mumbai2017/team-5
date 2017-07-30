@@ -18,6 +18,7 @@ if(isset($_POST['submit']))
   $password = $_POST['password'];
   $contact=$_POST['phone'];
   $role=$_POST['role'];
+  $email=$_POST['email'];
   $mid=$_POST['mid'];
   $userObject = new User();
   $hashed_password = md5($password);
