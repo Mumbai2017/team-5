@@ -21,7 +21,7 @@ if(isset($_POST['file_name']))   // getting the json data from php
  $url="uploads/";
  
  $con=mysqli_connect('localhost','root','','team-5');
- $sql="Insert into video values(1,$filename,$teacherid,$url)";  //issue with the database cant help it. now can't help it. 
+ $sql="Insert into video values(1,$filename,$teacherid,$url)"; 
 
  $result=mysqli_query($con,$sql);
 
